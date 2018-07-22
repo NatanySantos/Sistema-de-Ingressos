@@ -1,6 +1,5 @@
 <?php
 	
-
 	require_once('db.class.php');
 
 	$objDb = new db();
@@ -10,6 +9,9 @@
  	$last = $_POST["last"];
  	$email = $_POST["email"];
  	$senha = $_POST["senha"];
+
+ 	//preciso verificar se o email ja existe no banco
+ 	//if($email == )
 
  	$sql = "INSERT INTO usuarios (first, last, email, senha) VALUES ('$first', '$last', '$email', '$senha')";
 

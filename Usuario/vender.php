@@ -1,3 +1,14 @@
+<?php
+
+  session_start();
+
+  if(!isset($_SESSION['email'])){
+    header('Location: ../index.php');
+  }
+
+
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -42,7 +53,7 @@
     <div class="preloader">
         <div class="preloader-spinner">
             <div class="loader-content">
-                <img src="assets/img/preloader.gif" alt="JSOFT">
+                <img src="assets/img/ingressos.gif" alt="JSOFT">
             </div>
         </div>
     </div>
@@ -72,16 +83,6 @@
                     </div>
                     <!--== Single HeaderTop End ==-->
 
-                    <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <!-- <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a> -->
-                            <!-- <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a> -->
-                        </div>
-                    </div>
-                    <!--== Social Icons End ==-->
                 </div>
             </div>
         </div>
@@ -108,20 +109,24 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">Sobre</a></li>
-                                <li><a href="services.php">Serviços</a></li>
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="../about.html">Sobre</a></li>
                                 
-                                <li><a href="index.html">Ingressos</a>
+                                <li><a href="area_user.php">Ingressos</a>
                                     <ul>
                                         <li><a href="comprar.php">Comprar</a></li>
                                         <li class="active"><a href="#">Vender</a></li>
-                                        <li><a href="404.html">404</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="login.php">Login</a></li>
-                                <li><a href="register.php">Registrar</a></li>
-                                <li><a href="contact.html">Contato</a></li>
+                                <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                                <li><a href="../contact.html">Contato</a></li>
+                                <li class="active"><a href="#">Perfil</a>
+                                    <ul>
+                                        <li><a href="publicacao.php">Minhas Publicações</a></li>
+                                        <li><a href="comprar.php">Lista de Ingressos</a></li>
+                                        <li><a href="perfil.php">Editar Perfil</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -262,12 +267,6 @@
                                 <br><br>
                                 <p>Dedicamos nosso tempo para entregar a melhor experiência para todos os nossos clientes.</p>
 
-                                <div class="newsletter-area">
-                                    <!-- <form action="index.html">
-                                        <input type="email" placeholder="Subscribe Our Newsletter">
-                                        <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
-                                    </form> -->
-                                </div>
 
                             </div>
                         </div>
@@ -312,38 +311,42 @@
     <!--== Footer Area End ==-->
 
     <!--== Scroll Top Area Start ==-->
-   <!--  <div class="scroll-top">
-        <img src="assets/img/tk.jpg" alt="JSOFT">
-    </div> -->
+    <div class="scroll-top">
+        <i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i>
+    </div>
     <!--== Scroll Top Area End ==-->
 
     <!--=======================Javascript============================-->
     <!--=== Jquery Min Js ===-->
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="../assets/js/jquery-3.2.1.min.js"></script>
     <!--=== Jquery Migrate Min Js ===-->
-    <script src="assets/js/jquery-migrate.min.js"></script>
+    <script src="../assets/js/jquery-migrate.min.js"></script>
     <!--=== Popper Min Js ===-->
-    <script src="assets/js/popper.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
     <!--=== Bootstrap Min Js ===-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
     <!--=== Gijgo Min Js ===-->
-    <script src="assets/js/plugins/gijgo.js"></script>
+    <script src="../assets/js/plugins/gijgo.js"></script>
     <!--=== Vegas Min Js ===-->
-    <script src="assets/js/plugins/vegas.min.js"></script>
+    <script src="../assets/js/plugins/vegas.min.js"></script>
     <!--=== Isotope Min Js ===-->
-    <script src="assets/js/plugins/isotope.min.js"></script>
+    <script src="../assets/js/plugins/isotope.min.js"></script>
     <!--=== Owl Caousel Min Js ===-->
-    <script src="assets/js/plugins/owl.carousel.min.js"></script>
+    <script src="../assets/js/plugins/owl.carousel.min.js"></script>
     <!--=== Waypoint Min Js ===-->
-    <script src="assets/js/plugins/waypoints.min.js"></script>
+    <script src="../assets/js/plugins/waypoints.min.js"></script>
     <!--=== CounTotop Min Js ===-->
-    <script src="assets/js/plugins/counterup.min.js"></script>
+    <script src="../assets/js/plugins/counterup.min.js"></script>
     <!--=== YtPlayer Min Js ===-->
-    <script src="assets/js/plugins/mb.YTPlayer.js"></script>
+    <script src="../assets/js/plugins/mb.YTPlayer.js"></script>
     <!--=== Magnific Popup Min Js ===-->
-    <script src="assets/js/plugins/magnific-popup.min.js"></script>
+    <script src="../assets/js/plugins/magnific-popup.min.js"></script>
     <!--=== Slicknav Min Js ===-->
-    <script src="assets/js/plugins/slicknav.min.js"></script>
+    <script src="../assets/js/plugins/slicknav.min.js"></script>
+
+    <!--=== Mian Js ===-->
+    <script src="../assets/js/main.js"></script>
+
 
     <!--=== Mian Js ===-->
     <script src="assets/js/main.js">

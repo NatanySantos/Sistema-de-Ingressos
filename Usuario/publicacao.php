@@ -3,12 +3,12 @@
   session_start();
 
   if(!isset($_SESSION['email'])){
-    header('Location: ../login.php');
-  }
+   header('Location: ../login.php');
+ }
 
 
-?> 
-
+?>
+ 
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -105,19 +105,11 @@
                             <ul>
                                 <li><a href="../index.html">Home</a></li>
                                 <li><a href="../about.html">Sobre</a></li>
-                                
-                                <!-- <li><a href="index.html">Ingressos</a>
-                                    <ul>
-                                        <li><a href="comprar.php">Comprar</a></li>
-                                        <li><a href="vender.php">Vender</a></li>
-                                    </ul>
-                                </li> -->
-                                <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
-                                <!-- <li><a href="register.php">Registrar</a></li> -->
+                                <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
                                 <li><a href="../contact.html">Contato</a></li>
-                                <li class="active"><a href="#">Perfil</a>
+                                <li><a href="area_user.php">Perfil</a>
                                     <ul>
-                                        <li><a href="publicacao.php">Minhas Publicações</a></li>
+                                        <li class="active"><a href="#">Minhas Publicações</a></li>
                                         <li><a href="comprar.php">Lista de Ingressos</a></li>
                                         <li><a href="perfil.php">Editar Perfil</a></li>
                                     </ul>
@@ -140,9 +132,9 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Meu espaço</h2>
+                        <h2>Minhas publicações</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Utilize nossa plataforma da maneira que desejar.</p>
+                        <p>Confira todas as publicações que você já fez.</p>
                     </div>
                 </div>
                 <!-- Page Title End -->
@@ -150,40 +142,6 @@
         </div>
     </section>
     <!--== Page Title Area End ==-->
-
-
-    <!--== Service Page Content Start ==-->
-    <section id="service-page-wrapper" class="section-padding">
-        <div class="container">
-            <div class="row">
-                <!-- Single Service Start -->
-                <a href="comprar.php" >
-                    <div class="col-lg-6 text-center">
-                        <div class="service-item">
-                            <i class="fa fa-ticket"></i>
-                            <h3>COMPRAR</h3>
-                            <p>Clique aqui se desejar fazer uma compra</p>
-                        </div>
-                    </div>
-                </a>
-                <!-- Single Service End -->
-                
-                <!-- Single Service Start -->
-                <a href="vender.php">
-                    <div class="col-lg-6 text-center">
-                        <div class="service-item">
-                            <i class="fa fa-money"></i>
-                            <h3>VENDER</h3>
-                            <p>Clique aqui se desejar fazer uma venda</p>
-                        </div>
-                    </div>
-                </a>
-                <!-- Single Service End -->
-            </div>
-        </div>
-    </section>
-    <!--== Service Page Content End ==-->
-
 
     <!--== Suas Publicaçoes Start ==-->
     <section class="container-fluid text-center main-screen"> 
@@ -314,6 +272,7 @@
         
     </section>
     <!--== Suas Publicaçoes End ==-->
+
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">

@@ -24,8 +24,8 @@
                 header('Location: ../Usuario/area_user.php');
 		}
 		else{//echo 'Usuário não existe';
-			$_SESSION['loginErro'] = "Email ou senha inválido" ;
-			header('Location: ../login.php');//forçando a redirecionamento da pagina		
+			//$_SESSION['loginErro'] = "Email ou senha inválido" ;
+			header('Location: ../login.php?erro=1');//forçando a redirecionamento da pagina		
 
 		}
 

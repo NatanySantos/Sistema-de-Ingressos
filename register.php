@@ -42,7 +42,7 @@
     <div class="preloader">
         <div class="preloader-spinner">
             <div class="loader-content">
-                <img src="assets/img/preloader.gif" alt="JSOFT">
+                <img src="assets/img/ingressos.gif" alt="JSOFT">
             </div>
         </div>
     </div>
@@ -144,6 +144,7 @@
                 		<div class="login-form">
                 			<h3>Registrar</h3>
 							<form action="BD/user.php" method="POST">
+                                
 								<div class="name">
 									<div class="row">
 										<div class="col-md-6">
@@ -204,13 +205,6 @@
                                 <br><br>
                                 <p>Dedicamos nosso tempo para entregar a melhor experiência para todos os nossos clientes.</p>
 
-                                <div class="newsletter-area">
-                                    <!-- <form action="index.html">
-                                        <input type="email" placeholder="Subscribe Our Newsletter">
-                                        <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
-                                    </form> -->
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -255,7 +249,7 @@
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">
-        <img src="assets/img/scroll-top.png" alt="JSOFT">
+        <i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i>
     </div>
     <!--== Scroll Top Area End ==-->
 

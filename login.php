@@ -1,3 +1,15 @@
+<?php
+
+  session_start();
+
+  if(isset($_SESSION['email'])){
+    header('Location: Usuario/area_user.php');
+  }
+
+$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -42,7 +54,7 @@
     <div class="preloader">
         <div class="preloader-spinner">
             <div class="loader-content">
-                <img src="assets/img/preloader.gif" alt="JSOFT">
+                <img src="assets/img/ingressos.gif" alt="JSOFT">
             </div>
         </div>
     </div>
@@ -72,16 +84,6 @@
                     </div>
                     <!--== Single HeaderTop End ==-->
 
-                    <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <!-- <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a> -->
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <!--== Social Icons End ==-->
                 </div>
             </div>
         </div>
@@ -165,18 +167,16 @@
 							</form>
                             <p class="text-center text-danger">
                                 <?php
-                                    if(isset($_SESSION['loginErro']))
-                                    {
-                                        echo $_SESSION['loginErro'];
-                                        unset($_SESSION['loginErro']);
-                                    }
-                                ?> 
+                                  if($erro == 1){
+                                     echo "<font color = #FF0000>Usuário ou Senha Incorreto(s)</font>";
+                                  }
+                                ?>
                             </p>
 
                 		</div>
                 		
                 		<div class="create-ac">
-                			<p>Não tem uma conta? <a href="register.html">Cadastrar</a></p>
+                			<p>Não tem uma conta? <a href="register.php">Cadastrar</a></p>
                 		</div>
                 	</div>
                 </div>
@@ -200,12 +200,6 @@
                                 <br><br>
                                 <p>Dedicamos nosso tempo para entregar a melhor experiência para todos os nossos clientes.</p>
 
-                                <div class="newsletter-area">
-                                    <!-- <form action="index.html">
-                                        <input type="email" placeholder="Subscribe Our Newsletter">
-                                        <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
-                                    </form> -->
-                                </div>
 
                             </div>
                         </div>
@@ -251,7 +245,7 @@
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">
-        <img src="assets/img/scroll-top.png" alt="JSOFT">
+        <i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i>
     </div>
     <!--== Scroll Top Area End ==-->
 

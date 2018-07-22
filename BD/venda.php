@@ -1,5 +1,10 @@
 <?php
 	
+	session_start();
+
+	if(!isset($_SESSION['email'])){
+		header('Location: ../login.php');
+	}
 
 	require_once('db.class.php');
 
@@ -9,7 +14,7 @@
 
    
 
-	$evento = $_POST["evento"] ; //faz a associação atravez dos name do outro Documento
+	$evento = $_POST["evento"] ; 
 	$data = $_POST["data"];
 	$preco = $_POST["preco"];
 	$telefone = $_POST["telefone"];
@@ -19,13 +24,12 @@
 
 	$sql = "insert into venda  (evento, data, preco, telefone, email, info) values ( '$evento','$data','$preco','$telefone', '$email', '$info' ) ";
 
-	//executar query
 
 	//mysqli_query(conexão, Query)
 	if(mysqli_query($link, $sql))
 	{
 		// echo 'Publicacao realizada com sucesso';
-		header('Location: ../index.html');
+		header('Location: ../area_usuario.php');
 	}
 	else {
 		echo 'Falha ao publicar. Tente novamente!';
