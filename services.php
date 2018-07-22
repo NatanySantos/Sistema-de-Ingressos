@@ -8,7 +8,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Cardoor - Car Rental HTML Template</title>
+    <title>Ingressos Jhama - Serviços</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -56,19 +56,19 @@
                 <div class="row">
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-left">
-                        <i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
+                        <i class="fa fa-map-marker"></i> Diamantina/MG
                     </div>
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-center">
-                        <i class="fa fa-mobile"></i> +1 800 345 678
+                        <i class="fa fa-search-plus"></i> Tudo que você procura
                     </div>
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-center">
-                        <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                        <i class="fa fa-ticket"></i> Plataforma de Ingressos
                     </div>
                     <!--== Single HeaderTop End ==-->
 
@@ -105,17 +105,17 @@
                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">Sobre</a></li>
-                                <li><a href="services.html">Serviços</a></li>
+                                <li class="active"><a href="#">Serviços</a></li>
                                 
                                 <li><a href="index.html">Ingressos</a>
                                     <ul>
-                                        <li><a href="comprar.html">Comprar</a></li>
-                                        <li><a href="vender.html">Vender</a></li>
+                                        <li><a href="comprar.php">Comprar</a></li>
+                                        <li><a href="vender.php">Vender</a></li>
                                         <li><a href="404.html">404</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="login.html">Login</a></li>
-                                <li class="active"><a href="#">Registrar</a></li>
+                                <li><a href="login.php">Login</a></li>
+                                <li><a href="register.php">Registrar</a></li>
                                 <li><a href="contact.html">Contato</a></li>
                             </ul>
                         </nav>
@@ -135,7 +135,7 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Login</h2>
+                        <h2>Our Services</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     </div>
@@ -146,59 +146,100 @@
     </section>
     <!--== Page Title Area End ==-->
 
-    <!--== Login Page Content Start ==-->
-    <section id="lgoin-page-wrap" class="section-padding">
+    <!--== Service Page Content Start ==-->
+    <section id="service-page-wrapper" class="section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-8 m-auto">
-                	<div class="login-page-content">
-                		<div class="login-form">
-                			<h3>Sign Up</h3>
-							<form action="index.html">
-								<div class="name">
-									<div class="row">
-										<div class="col-md-6">
-											<input type="text" placeholder="First Name">
-										</div>
-										<div class="col-md-6">
-											<input type="text" placeholder="Last Name">
-										</div>
-									</div>
-								</div>
-								<div class="username">
-									<input type="email" placeholder="Email">
-								</div>
-								<div class="username">
-									<input type="text" placeholder="Username">
-								</div>
-								<div class="password">
-									<input type="password" placeholder="Password">
-								</div>
-								<div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Sign Up</button>
-								</div>
-							</form>
-                		</div>
-                		
-                		<div class="login-other">
-                			<span class="or">or</span>
-                			<a href="#" class="login-with-btn facebook"><i class="fa fa-facebook"></i> Signup With Facebook</a>
-                			<a href="#" class="login-with-btn google"><i class="fa fa-google"></i> Signup With Google</a>
-                		</div>
-                		<div class="create-ac">
-                			<p>Have an account? <a href="login.html">Sign In</a></p>
-                		</div>
-                		<div class="login-menu">
-                			<a href="about.html">About</a>
-                			<span>|</span>
-                			<a href="contact.html">Contact</a>
-                		</div>
-                	</div>
-                </div>
-        	</div>
+                <!-- Single Service Start -->
+                <a href="comprar.php" >
+                    <div class="col-lg-6 text-center">
+                        <div class="service-item">
+                            <i class="fa fa-ticket"></i>
+                            <h3>COMPRAR</h3>
+                            <p>Clique aqui se desejar fazer uma compra</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Single Service End -->
+                
+                <!-- Single Service Start -->
+                <a href="vender.php">
+                    <div class="col-lg-6 text-center">
+                        <div class="service-item">
+                            <i class="fa fa-money"></i>
+                            <h3>VENDER</h3>
+                            <p>Clique aqui se desejar fazer uma venda</p>
+                        </div>
+                    </div>
+                </a>
+                <!-- Single Service End -->
+            </div>
         </div>
     </section>
-    <!--== Login Page Content End ==-->
+    <!--== Service Page Content End ==-->
+
+     <!--== Partner Area Start ==-->
+    <div id="partner-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="partner-content-wrap">
+                        <!-- Single Partner Start -->
+                        <div class="single-partner">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <img src="assets/img/partner/lg1.jpg" alt="JSOFT" >
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Partner End -->
+
+                        <!-- Single Partner Start -->
+                        <div class="single-partner">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <img src="assets/img/partner/lg2.jpg" alt="JSOFT" >
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Partner End -->
+
+                        <!-- Single Partner Start -->
+                        <div class="single-partner">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <img src="assets/img/partner/lg3.jpg" alt="JSOFT" >
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Partner End -->
+
+                        <!-- Single Partner Start -->
+                        <div class="single-partner">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <img src="assets/img/partner/lg4.jpg" alt="JSOFT">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Partner End -->
+
+                        <!-- Single Partner Start -->
+                        <div class="single-partner">
+                            <div class="display-table">
+                                <div class="display-table-cell">
+                                    <img src="assets/img/partner/lg5.jpg" alt="JSOFT" >
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Partner End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== Partner Area End ==-->
+
 
     <!--== Footer Area Start ==-->
     <section id="footer-area">
@@ -209,16 +250,17 @@
                     <!-- Single Footer Widget Start -->
                     <div class="col-lg-4 col-md-6">
                         <div class="single-footer-widget">
-                            <h2>About Us</h2>
+                            <h2>Sobre nós</h2>
                             <div class="widget-body">
-                                <img src="assets/img/logo.png" alt="JSOFT">
-                                <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
+                                <i class="fa fa-ticket fa-5x" style="color: #ffd000"></i>Ingressos Jhama 
+                                <br><br>
+                                <p>Dedicamos nosso tempo para entregar a melhor experiência para todos os nossos clientes.</p>
 
                                 <div class="newsletter-area">
-                                    <form action="index.html">
+                                    <!-- <form action="index.html">
                                         <input type="email" placeholder="Subscribe Our Newsletter">
                                         <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
-                                    </form>
+                                    </form> -->
                                 </div>
 
                             </div>
@@ -226,55 +268,20 @@
                     </div>
                     <!-- Single Footer Widget End -->
 
-                    <!-- Single Footer Widget Start -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-footer-widget">
-                            <h2>Recent Posts</h2>
-                            <div class="widget-body">
-                                <ul class="recent-post">
-                                    <li>
-                                        <a href="#">
-                                           Hello Bangladesh! 
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                          Lorem ipsum dolor sit amet
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                           Hello Bangladesh! 
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            consectetur adipisicing elit?
-                                           <i class="fa fa-long-arrow-right"></i>
-                                       </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Footer Widget End -->
+                    <div class="col-lg-4 col-md-6"></div>
 
                     <!-- Single Footer Widget Start -->
                     <div class="col-lg-4 col-md-6">
                         <div class="single-footer-widget">
-                            <h2>get touch</h2>
+                            <h2>Entre em contato</h2>
                             <div class="widget-body">
-                                <p>Lorem ipsum doloer sited amet, consectetur adipisicing elit. nibh auguea, scelerisque sed</p>
+                                <p>Para maiores informações</p>
 
                                 <ul class="get-touch">
-                                    <li><i class="fa fa-map-marker"></i> 800/8, Kazipara, Dhaka</li>
-                                    <li><i class="fa fa-mobile"></i> +880 01 86 25 72 43</li>
-                                    <li><i class="fa fa-envelope"></i> kazukamdu83@gmail.com</li>
+                                    <li><i class="fa fa-map-marker"></i> 5000 Rodovia MGT 367 - Km 583 Alto da, Diamantina - MG, 39100-000</li>
+                                    <li><i class="fa fa-envelope"></i>jn.ufvjm@gmail.com</li>
                                 </ul>
-                                <a href="https://goo.gl/maps/b5mt45MCaPB2" class="map-show" target="_blank">Show Location</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -289,9 +296,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        
                     </div>
                 </div>
             </div>
@@ -301,9 +306,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!--== Footer Area End ==-->
 
     <!--== Scroll Top Area Start ==-->
-    <div class="scroll-top">
-        <img src="assets/img/scroll-top.png" alt="JSOFT">
-    </div>
+   <!--  <div class="scroll-top">
+        <img src="assets/img/tk.jpg" alt="JSOFT">
+    </div> -->
     <!--== Scroll Top Area End ==-->
 
     <!--=======================Javascript============================-->

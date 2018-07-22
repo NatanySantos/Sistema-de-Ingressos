@@ -8,7 +8,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Cardoor - Car Rental HTML Template</title>
+    <title>Ingressos Jhama - Comprar</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -56,31 +56,41 @@
                 <div class="row">
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-left">
-                        <i class="fa fa-map-marker"></i> 802/2, Mirpur, Dhaka
+                        <i class="fa fa-map-marker"></i> Diamantina/MG
                     </div>
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-center">
-                        <i class="fa fa-mobile"></i> +1 800 345 678
+                        <i class="fa fa-search-plus"></i> Tudo que você procura
                     </div>
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Single HeaderTop Start ==-->
                     <div class="col-lg-3 text-center">
-                        <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                        <i class="fa fa-ticket"></i> Plataforma de Ingressos
                     </div>
                     <!--== Single HeaderTop End ==-->
 
                     <!--== Social Icons Start ==-->
                     <div class="col-lg-3 text-right">
                         <div class="header-social-icons">
+                            <!-- <a href="#"><i class="fa fa-behance"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a> -->
+                            <<!-- a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a> -->
+                        </div>
+                    </div>
+
+                    <!--== Social Icons Start ==-->
+                    <!-- <div class="col-lg-3 text-right">
+                        <div class="header-social-icons">
                             <a href="#"><i class="fa fa-behance"></i></a>
                             <a href="#"><i class="fa fa-pinterest"></i></a>
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
                         </div>
-                    </div>
+                    </div> -->
                     <!--== Social Icons End ==-->
                 </div>
             </div>
@@ -110,7 +120,7 @@
                                 <li><a href="index.html">Ingressos</a>
                                     <ul>
                                         <li class="active"><a href="#">Comprar</a></li>
-                                        <li><a href="vender.html">Vender</a></li>
+                                        <li><a href="vender.php">Vender</a></li>
                                         <li><a href="404.html">404</a></li>
                                     </ul>
                                 </li>
