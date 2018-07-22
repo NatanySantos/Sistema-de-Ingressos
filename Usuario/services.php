@@ -71,17 +71,6 @@
                         <i class="fa fa-ticket"></i> Plataforma de Ingressos
                     </div>
                     <!--== Single HeaderTop End ==-->
-
-                    <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <!--== Social Icons End ==-->
                 </div>
             </div>
         </div>

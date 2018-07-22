@@ -7,7 +7,7 @@
 	$senha   = $_POST['senha'];
 
 	//Cria a sql de consulta se há usuário cadastrado
-	$sql=" SELECT * FROM usuarios WHERE  email='$email' AND senha='$senha' ";
+	$sql=" SELECT email, senha FROM usuarios WHERE  email='$email' AND senha='$senha' ";
 	
 	$objDb = new db();
 	$link = $objDb->conecta_mysql();
@@ -21,11 +21,11 @@
 				
 				$_SESSION['email'] = $dados_usuario['email'];
 				$_SESSION['senha'] = $dados_usuario['senha'];
-                header('Location: ../services.php');
+                header('Location: ../Usuario/area_user.php');
 		}
 		else{//echo 'Usuário não existe';
-			$_SESSION['loginErro'] = "Email ou senha inválido"
-			header('Location: ../index.php?erro=1');//forçando a redirecionamento da pagina		
+			$_SESSION['loginErro'] = "Email ou senha inválido" ;
+			header('Location: ../login.php');//forçando a redirecionamento da pagina		
 
 		}
 

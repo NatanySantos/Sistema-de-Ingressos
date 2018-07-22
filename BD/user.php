@@ -11,14 +11,15 @@
  	$email = $_POST["email"];
  	$senha = $_POST["senha"];
 
- 	$insert = $conectar->prepare("INSERT INTO users (first, last, email, senha) VALUES (first, last, usuario, senha)");
+ 	$sql = "INSERT INTO usuarios (first, last, email, senha) VALUES ('$first', '$last', '$email', '$senha')";
 
- 	if(mysqli_query($link, $insert))
+
+ 	if(mysqli_query($link, $sql))
 	{
 		// echo 'Funcionario registrado com sucesso';
-		header('Location: ../register.php');
+		header('Location: ../Usuario/area_user.php');
 	}
 	else {
 		echo 'Falha ao registrar. Tente novamente!';
 	}
-  }
+ ?>

@@ -72,16 +72,6 @@
                     </div>
                     <!--== Single HeaderTop End ==-->
 
-                    <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <!-- <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a> -->
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <!--== Social Icons End ==-->
                 </div>
             </div>
         </div>
@@ -106,13 +96,11 @@
                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">Sobre</a></li>
-                                <li><a href="services.php">Serviços</a></li>
                                 
                                 <li><a href="index.html">Ingressos</a>
                                     <ul>
-                                        <li><a href="comprar.html">Comprar</a></li>
-                                        <li><a href="vender.html">Vender</a></li>
-                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="login.php">Comprar</a></li>
+                                        <li><a href="login.php">Vender</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="login.php">Login</a></li>
@@ -155,7 +143,7 @@
                 	<div class="login-page-content">
                 		<div class="login-form">
                 			<h3>Registrar</h3>
-							<form action="user.php" method="POST">
+							<form action="BD/user.php" method="POST">
 								<div class="name">
 									<div class="row">
 										<div class="col-md-6">

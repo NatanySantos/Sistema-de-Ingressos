@@ -8,7 +8,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Ingressos Jhama</title>
+    <title>Ingressos Jhama - Login</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -105,17 +105,15 @@
                             <ul>
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">Sobre</a></li>
-                                <li><a href="services.html">Serviços</a></li>
                                 
                                 <li><a href="index.html">Ingressos</a>
                                     <ul>
-                                        <li><a href="comprar.html">Comprar</a></li>
-                                        <li><a href="vender.html">Vender</a></li>
-                                        <li><a href="404.html">404</a></li>
+                                        <li><a href="login.php">Comprar</a></li>
+                                        <li><a href="login.php">Vender</a></li>
                                     </ul>
                                 </li>
                                 <li class="active"><a href="#">Login</a></li>
-                                <li><a href="register.html">Registrar</a></li>
+                                <li><a href="register.php">Registrar</a></li>
                                 <li><a href="contact.html">Contato</a></li>
                             </ul>
                         </nav>
@@ -167,7 +165,7 @@
 							</form>
                             <p class="text-center text-danger">
                                 <?php
-                                   // if(isset($_SESSION['loginErro']))
+                                    if(isset($_SESSION['loginErro']))
                                     {
                                         echo $_SESSION['loginErro'];
                                         unset($_SESSION['loginErro']);
