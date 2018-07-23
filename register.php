@@ -84,7 +84,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -94,18 +94,18 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">Sobre</a></li>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="about.php">Sobre</a></li>
                                 
-                                <li><a href="index.html">Ingressos</a>
+                                <li><a href="login.php">Ingressos</a>
                                     <ul>
                                         <li><a href="login.php">Comprar</a></li>
                                         <li><a href="login.php">Vender</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="login.php">Login</a></li>
-                                <li class="active"><a href="#">Registrar</a></li>
-                                <li><a href="contact.html">Contato</a></li>
+                                <li class="active"><a href="register.php">Registrar</a></li>
+                                <li><a href="contact.php">Contato</a></li>
                             </ul>
                         </nav>
                     </div>

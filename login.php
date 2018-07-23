@@ -95,7 +95,7 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -105,18 +105,18 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">Sobre</a></li>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="about.php">Sobre</a></li>
                                 
-                                <li><a href="index.html">Ingressos</a>
+                                <li><a href="login.php">Ingressos</a>
                                     <ul>
                                         <li><a href="login.php">Comprar</a></li>
                                         <li><a href="login.php">Vender</a></li>
                                     </ul>
                                 </li>
-                                <li class="active"><a href="#">Login</a></li>
+                                <li class="active"><a href="login.php">Login</a></li>
                                 <li><a href="register.php">Registrar</a></li>
-                                <li><a href="contact.html">Contato</a></li>
+                                <li><a href="contact.php">Contato</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -156,10 +156,10 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                 			<h3>BEM-VINDO DE VOLTA!</h3>
 							<form action="BD/logar.php" method="POST">
 								<div class="username">
-									<input type="text" placeholder="Email" id="email">
+									<input type="text" placeholder="Email" id="email" name="email">
 								</div>
 								<div class="password">
-									<input type="password" placeholder="Senha" id="senha">
+									<input type="password" placeholder="Senha" id="senha" name="senha">
 								</div>
 								<div class="log-btn">
 									<button type="submit"><i class="fa fa-sign-in"></i> Entrar</button>

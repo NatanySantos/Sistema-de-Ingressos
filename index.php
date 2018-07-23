@@ -1,3 +1,15 @@
+<?php
+
+  session_start();
+
+  if(isset($_SESSION['email'])){
+ //   header('Location: Usuario/area_user.php');
+  }
+
+$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -83,7 +95,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <!-- <img src="assets/img/logoyes.jpg" alt="JSOFT" width="80px" height="50px"> -->
                             <i class="fa fa-ticket fa-5x" style="color: #ffd000"></i>Ingressos Jhama
                         </a>
@@ -91,13 +103,18 @@
                     <!--== Logo End ==-->
 
                     <!--== Main Menu Start ==-->
+
+                     <?php
+                        if(!isset($_SESSION['email'])){
+                                 
+                     ?>
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="about.html">Sobre</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
+                                <li><a href="about.php">Sobre</a></li>
                                 
-                                <li><a href="index.html">Ingressos</a>
+                                <li><a href="login.php">Ingressos</a>
                                     <ul>
                                         <li><a href="login.php">Comprar</a></li>
                                         <li><a href="login.php">Vender</a></li>
@@ -105,10 +122,37 @@
                                 </li>
                                 <li><a href="login.php">Login</a></li>
                                 <li><a href="register.php">Registrar</a></li>
-                                <li><a href="contact.html">Contato</a></li>
+                                <li><a href="contact.php">Contato</a></li>
                             </ul>
                         </nav>
                     </div>
+                    <?php
+                        }else{
+
+                            ?>
+                            <div class="col-lg-8 d-none d-xl-block">
+                                <nav class="mainmenu alignright">
+                                    <ul>
+                                        <li class="active"><a href="index.php">Home</a></li>
+                                        <li><a href="about.php">Sobre</a></li>
+                                        
+                                        <li><a href="Usuario/area_user.php">Ingressos</a>
+                                            <ul>
+                                                <li><a href="Usuario/comprar.php">Comprar</a></li>
+                                                <li><a href="Usuario/vender.php">Vender</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="Usuario/logout.php">Sair</a></li>
+                                        <li><a href="contact.php">Contato</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+
+
+                        <?php
+                        }
+                    ?>
                     <!--== Main Menu End ==-->
                 </div>
             </div>
@@ -130,17 +174,33 @@
                         <div class="login-page-content">
                             <div class="login-form">
                                 <h3>BEM-VINDO DE VOLTA!</h3>
-                                <form action="index.html">
-                                    <div class="username">
-                                        <input type="text" placeholder="Email or Username">
-                                    </div>
-                                    <div class="password">
-                                        <input type="password" placeholder="Password">
-                                    </div>
-                                    <div class="log-btn">
-                                        <button type="submit"><i class="fa fa-sign-in"></i> Entrar</button>
-                                    </div>
-                                </form>
+                                
+                                <?php
+                                if(!isset($_SESSION['email'])){
+                                 
+                                    ?>
+                                <form action="BD/logar.php" method="POST">
+                                <div class="username">
+                                    <input type="text" placeholder="Email" id="email" name="email">
+                                </div>
+                                <div class="password">
+                                    <input type="password" placeholder="Senha" id="senha" name="senha">
+                                </div>
+                                <div class="log-btn">
+                                    <button type="submit"><i class="fa fa-sign-in"></i> Entrar</button>
+                                </div>
+                            </form>
+
+                            <?php
+                        }
+                            ?>
+                            <p class="text-center text-danger">
+                                <?php
+                                  if($erro == 1){
+                                     echo "<font color = #FF0000>Usuário ou Senha Incorreto(s)</font>";
+                                  }
+                                ?>
+                            </p>
                             </div>
                             <div class="create-ac teste">
                                 <!-- <p>Don't have an account? <a href="register.html">Cadastrar</a></p> -->

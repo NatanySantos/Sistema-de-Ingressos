@@ -1,3 +1,14 @@
+<?php
+
+  session_start();
+
+  if(isset($_SESSION['email'])){
+ //   header('Location: Usuario/area_user.php');
+  }
+
+$status = isset($_GET['status']) ? $_GET['status'] : 0;   
+
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -76,6 +87,16 @@
             </div>
         </div>
         <!--== Header Top End ==-->
+<?php 
+
+    if($status == 1){
+        echo "Sucesso";
+    }else if($status ==2){
+        echo "erro";
+    }
+
+?>
+
 
         <!--== Header Bottom Start ==-->
         <div id="header-bottom">
@@ -83,20 +104,25 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
                     <!--== Logo End ==-->
 
                     <!--== Main Menu Start ==-->
+
+                     <?php
+                        if(!isset($_SESSION['email'])){
+                                 
+                     ?>
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">Sobre</a></li>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="about.php">Sobre</a></li>
                                 
-                                <li><a href="index.html">Ingressos</a>
+                                <li><a href="login.php">Ingressos</a>
                                     <ul>
                                         <li><a href="login.php">Comprar</a></li>
                                         <li><a href="login.php">Vender</a></li>
@@ -104,10 +130,37 @@
                                 </li>
                                 <li><a href="login.php">Login</a></li>
                                 <li><a href="register.php">Registrar</a></li>
-                                <li class="active"><a href="#">Contato</a></li>
+                                <li class="active"><a href="contact.php">Contato</a></li>
                             </ul>
                         </nav>
                     </div>
+                    <?php
+                        }else{
+
+                            ?>
+                            <div class="col-lg-8 d-none d-xl-block">
+                                <nav class="mainmenu alignright">
+                                    <ul>
+                                        <li><a href="index.php">Home</a></li>
+                                        <li><a href="about.php">Sobre</a></li>
+                                        
+                                        <li><a href="Usuario/area_user.php">Ingressos</a>
+                                            <ul>
+                                                <li><a href="Usuario/comprar.php">Comprar</a></li>
+                                                <li><a href="Usuario/vender.php">Vender</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="Usuario/logout.php">Sair</a></li>
+                                        <li class="active"><a href="contact.php">Contato</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+
+
+                        <?php
+                        }
+                    ?>
                     <!--== Main Menu End ==-->
                 </div>
             </div>
@@ -171,12 +224,7 @@
     </div>
     <!--== Contact Page Area End ==-->
 
-    <!--== Map Area Start ==-->
-    <div class="maparea">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29213.038296132225!2d90.39150904197642!3d23.760577791538438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c783c3404f0d%3A0x76ae0d2edabc81df!2sHatir+Jheel!5e0!3m2!1sen!2sbd!4v1517941663187"></iframe>
-       <!--  <iframe src="https://www.google.com.br/maps/place/R.+da+Gl%C3%B3ria,+Diamantina+-+MG,+39100-000/@-18.2399308,-43.6018623,17.25z/data=!4m5!3m4!1s0xaeb9abb562b337:0x1f9a0dad60ec30e5!8m2!3d-18.2415854!4d-43.6029691"></iframe> -->
-    </div>
-    <!--== Map Area End ==-->
+
 
  <!--== Footer Area Start ==-->
     <section id="footer-area">

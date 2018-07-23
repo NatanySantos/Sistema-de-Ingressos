@@ -93,7 +93,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="../assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -103,10 +103,10 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="../index.html">Home</a></li>
-                                <li><a href="../about.html">Sobre</a></li>
+                                <li><a href="../index.php">Home</a></li>
+                                <li><a href="../about.php">Sobre</a></li>
                                 <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
-                                <li><a href="../contact.html">Contato</a></li>
+                                <li><a href="../contact.php">Contato</a></li>
                                 <li><a href="area_user.php">Perfil</a>
                                     <ul>
                                         <li class="active"><a href="#">Minhas Publicações</a></li>
@@ -144,14 +144,14 @@
     <!--== Page Title Area End ==-->
 
     <!--== Suas Publicaçoes Start ==-->
-    <section class="container-fluid text-center main-screen"> 
+    <section class="container-fluid text-center main-screen" style="margin-top: 30px; margin-bottom: 30px"> 
           <div class="content">
             <div class="container-fluid">
               <div class="row">  
                   <div class="col-md-12">
                   <div class="card">
                       <div class="content table-responsive table-full-width">
-                        <table class="table table-hover table-striped ">
+                        <table class="table table-hover table-striped " >
 
                            <thead  bgcolor="#5F9EA0">
                              <th class=" text-center">Evento </th>
@@ -164,15 +164,16 @@
                               <th class=" text-center">Vendido</th>
                            </thead>
 
-                           <<?php 
+                           <?php 
                                 require_once "../BD/db.class.php";
     
                                 $objDb = new db();
                                 $link = $objDb->conecta_mysql();
 
                                 $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
-                                $email = filter_var($_GET['email']);
-                                $cmd = "SELECT * FROM venda WHERE email = '$email;'"; 
+                                //$email = filter_var($_GET['email']);
+                                $user= $_SESSION['id_user'];
+                                $cmd = "SELECT * FROM venda WHERE id_user = '$user'"; 
                                 $usuarios =  mysqli_query($link, $cmd);
                                   
                                 $total = mysqli_num_rows($usuarios); 
@@ -181,14 +182,14 @@
                                 $inicio = ($registros*$pagina)-$registros;
                                 $sql= "SELECT * FROM venda  order by data limit $inicio,$registros";
                                     
-                               // $resultado_id = mysqli_query($link, $sql);
+                                $resultado_id = mysqli_query($link, $sql);
 
-                                if($usuarios){
+                                if($resultado_id){
                                     $dados_usuario=array () ;
             
                                     $quant_linha=0;
 
-                                    while($linha = mysqli_fetch_array($usuarios, MYSQLI_ASSOC)){
+                                    while($linha = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)){
                                         $quant_linha++;
                                         $dados_usuario[] = $linha;
                                     }

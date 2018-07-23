@@ -20,19 +20,27 @@
 	$telefone = $_POST["telefone"];
 	$email = $_POST["email"];
 	$info = $_POST["info"];
+	$user = 	$_SESSION['id_user'];
+	$status = 'disponivel';
 
 
-	$sql = "insert into venda  (evento, data, preco, telefone, email, info) values ( '$evento','$data','$preco','$telefone', '$email', '$info' ) ";
+	$sql = "insert into venda  (evento, data, preco, telefone, email, info, id_user, status) values ( '$evento','$data','$preco','$telefone', '$email', '$info' , '$user' ,'$status') ";
 
 
 	//mysqli_query(conexão, Query)
 	if(mysqli_query($link, $sql))
 	{
-		// echo 'Publicacao realizada com sucesso';
-		header('Location: ../area_usuario.php');
+		
+
+		// echo "<script src='../assets/js/main.js'>alert('Publicação realizada com sucesso !!');</script>";
+		//$_SESSION['alerta']=false;
+
+		header('Location: ../Usuario/vender.php');
 	}
 	else {
 		echo 'Falha ao publicar. Tente novamente!';
+	//		$_SESSION['alerta']= false;
+
 	}
   
 

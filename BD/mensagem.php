@@ -34,11 +34,11 @@
 
   if($resultado){
 
-  header('Location: ../contact.html?status=1');
+  header('Location: ../contact.php?status=1');
       
     }
  else {
-  header('Location: ../contact.html?status=2');
+  header('Location: ../contact.php?status=2');
       
     
   }

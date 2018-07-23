@@ -82,6 +82,7 @@
                     </div>
                     <!--== Single HeaderTop End ==-->
 
+
                 </div>
             </div>
         </div>
@@ -93,7 +94,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="../assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -103,24 +104,33 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="../index.html">Home</a></li>
-                                <li><a href="../about.html">Sobre</a></li>
+                                <li><a href="../index.php">Home</a></li>
+                                <li><a href="../about.php">Sobre</a></li>
                                 
-                                <!-- <li><a href="index.html">Ingressos</a>
+                                <li><a href="area_user.php">Ingressos</a>
                                     <ul>
                                         <li><a href="comprar.php">Comprar</a></li>
                                         <li><a href="vender.php">Vender</a></li>
                                     </ul>
-                                </li> -->
+                                </li>
                                 <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                                 <!-- <li><a href="register.php">Registrar</a></li> -->
-                                <li><a href="../contact.html">Contato</a></li>
+                                <li><a href="../contact.php">Contato</a></li>
                                 <li class="active"><a href="#">Perfil</a>
                                     <ul>
                                         <li><a href="publicacao.php">Minhas Publicações</a></li>
                                         <li><a href="comprar.php">Lista de Ingressos</a></li>
                                         <li><a href="perfil.php">Editar Perfil</a></li>
+                                        <li><a href="inbox.php">Mensagens</a></li>
                                     </ul>
+                                </li>
+                                <li>
+                                    <a>
+                                             <i class="fa fa-user">
+                                                 <?php
+                                                 echo $_SESSION['first'];
+                                                 ?>
+                                             </i> </a>
                                 </li>
                             </ul>
                         </nav>
@@ -184,132 +194,6 @@
     </section>
     <!--== Service Page Content End ==-->
 
-
-    <!--== Suas Publicaçoes Start ==-->
-    <section class="container-fluid text-center main-screen"> 
-          <div class="content">
-            <div class="container-fluid">
-              <div class="row">  
-                  <div class="col-md-12">
-                  <div class="card">
-                      <div class="content table-responsive table-full-width">
-                        <table class="table table-hover table-striped ">
-
-                           <thead  bgcolor="#5F9EA0">
-                             <th class=" text-center">Evento </th>
-                              <th class=" text-center">Data </th>
-                              <th class=" text-center">Preço </th>
-                              <th class=" text-center">Telefone </th>
-                              <th class=" text-center">Email </th>
-                              <th class=" text-center">Editar</th>
-                              <th class=" text-center">Deletar</th>
-                              <th class=" text-center">Vendido</th>
-                           </thead>
-
-                           <<?php 
-                                require_once "../BD/db.class.php";
-    
-                                $objDb = new db();
-                                $link = $objDb->conecta_mysql();
-
-                                $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
-                                $email = filter_var($_GET['email']);
-                                $cmd = "SELECT * FROM venda WHERE email = '$email;'"; 
-                                $usuarios =  mysqli_query($link, $cmd);
-                                  
-                                $total = mysqli_num_rows($usuarios); 
-                                $registros = 6; 
-                                $numPaginas = ceil($total/$registros);
-                                $inicio = ($registros*$pagina)-$registros;
-                                $sql= "SELECT * FROM venda  order by data limit $inicio,$registros";
-                                    
-                               // $resultado_id = mysqli_query($link, $sql);
-
-                                if($usuarios){
-                                    $dados_usuario=array () ;
-            
-                                    $quant_linha=0;
-
-                                    while($linha = mysqli_fetch_array($usuarios, MYSQLI_ASSOC)){
-                                        $quant_linha++;
-                                        $dados_usuario[] = $linha;
-                                    }
-        
-
-                                    for($i=0; $i<$quant_linha; $i++){
-                                        ?>
-                                        <tbody>
-                                            <tr>
-                                                <td> <?php echo  $dados_usuario[$i]['evento']; ?> </td>
-                                                <td> <?php echo  $dados_usuario[$i]['data']; ?> </td>
-                                                <td> <?php echo  $dados_usuario[$i]['preco']; ?> </td>
-                                                <td>  <?php echo  $dados_usuario[$i]['telefone']; ?></td>
-                                                <td>  <?php echo  $dados_usuario[$i]['email']; ?></td>
-
-                                          
-                                                <td class="text-center ">   
-                                  
-                                                    <a href="editar_publi.php?id=<?php echo $dados_usuario[$i]['id']; ?>">
-                                                      <span style="color: #4B0082;">
-                                                          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                      </span>
-                                                    </a> 
-                                                 
-                                                </td>
-
-                                                <td class="text-center ">   
-                                  
-                                                    <a href="../BD/deletar_publi.php?id=<?php echo $dados_usuario[$i]['id']; ?>">
-                                                        
-                                                      <span  style="color:black;" onclick="alert('Deletado com sucesso!')"><i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                      </span>
-                                                    </a> 
-                                                 
-                                                </td>
-
-                                                <td class="text-center ">   
-                                                    
-                                                    <a href="#">
-
-                                                      <span style="color:green;" onclick="alert('Ingresso vendido!')">
-                                                           <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                      </span>
-                                                    </a> 
-                                                 
-                                                </td>
-                                            </tr>
-                                <?php
-                                    }}
-                                ?>
-
-                                        </tbody>
-                        </table>
-                         <?php
-                        $anterior = (($pagina -1) == 0) ? 1 : $pagina - 1;
-                        $posterior = (($pagina +1) >= $numPaginas) ? $numPaginas : $pagina+1; ?>
-
-
-
-                        <div id="navegacao">
-        
-                        <?php
-
-                            // O loop para exibir os valores à esquerda
-
-                            for($i = $pagina-$registros; $i <= $pagina-1; $i++){
-                                if($i > 0)
-                                echo '<a href="?pagina='.$i.'"> '.$i.' </a>';
-                            }
-
-                            echo '<a href="?pagina='.$pagina.'"><strong>'.$pagina.'</strong></a>';
-
-                            for($i = $pagina+1; $i < $pagina+$registros; $i++){
-                                if($i <= $numPaginas)
-                                echo '<a href="?pagina='.$i.'"> '.$i.' </a>';
-                            }
-
-
-                        ?>
                            
         
     </section>

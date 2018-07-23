@@ -103,7 +103,7 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="../assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
@@ -113,7 +113,7 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="../index.php">Home</a></li>
                                 <li><a href="../about.html">Sobre</a></li>
                                 
                                 <li><a href="area_user.php">Ingressos</a>
@@ -412,7 +412,7 @@
                                 <p>Lorem ipsum dolored is a sit ameted consectetur adipisicing elit. Nobis magni assumenda distinctio debitis, eum fuga fugiat error reiciendis.</p>
 
                                 <div class="newsletter-area">
-                                    <form action="index.html">
+                                    <form action="index.php">
                                         <input type="email" placeholder="Subscribe Our Newsletter">
                                         <button type="submit" class="newsletter-btn"><i class="fa fa-send"></i></button>
                                     </form>

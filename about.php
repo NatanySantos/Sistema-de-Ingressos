@@ -1,3 +1,14 @@
+<?php
+
+  session_start();
+
+  if(isset($_SESSION['email'])){
+ //   header('Location: Usuario/area_user.php');
+  }
+
+$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
+
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -84,20 +95,25 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
+                        <a href="index.php" class="logo">
                             <img src="assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
                     <!--== Logo End ==-->
 
                     <!--== Main Menu Start ==-->
+
+                     <?php
+                        if(!isset($_SESSION['email'])){
+                                 
+                     ?>
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li class="active"><a href="#">Sobre</a></li>
+                                <li><a href="index.php">Home</a></li>
+                                <li class="active"><a href="about.php">Sobre</a></li>
                                 
-                                <li><a href="index.html">Ingressos</a>
+                                <li><a href="login.php">Ingressos</a>
                                     <ul>
                                         <li><a href="login.php">Comprar</a></li>
                                         <li><a href="login.php">Vender</a></li>
@@ -105,10 +121,37 @@
                                 </li>
                                 <li><a href="login.php">Login</a></li>
                                 <li><a href="register.php">Registrar</a></li>
-                                <li><a href="contact.html">Contato</a></li>
+                                <li><a href="contact.php">Contato</a></li>
                             </ul>
                         </nav>
                     </div>
+                    <?php
+                        }else{
+
+                            ?>
+                            <div class="col-lg-8 d-none d-xl-block">
+                                <nav class="mainmenu alignright">
+                                    <ul>
+                                        <li><a href="index.php">Home</a></li>
+                                        <li class="active"><a href="about.php">Sobre</a></li>
+                                        
+                                        <li><a href="Usuario/area_user.php">Ingressos</a>
+                                            <ul>
+                                                <li><a href="Usuario/comprar.php">Comprar</a></li>
+                                                <li><a href="Usuario/vender.php">Vender</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="Usuario/logout.php">Sair</a></li>
+                                        <li><a href="contact.php">Contato</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+
+
+                        <?php
+                        }
+                    ?>
                     <!--== Main Menu End ==-->
                 </div>
             </div>

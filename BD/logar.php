@@ -6,8 +6,11 @@
 	$email = $_POST['email'];
 	$senha   = $_POST['senha'];
 
+	$senha = sha1($senha.$email);
+
+
 	//Cria a sql de consulta se há usuário cadastrado
-	$sql=" SELECT email, senha FROM usuarios WHERE  email='$email' AND senha='$senha' ";
+	$sql=" SELECT id, first, email, senha FROM usuarios WHERE  email='$email' AND senha='$senha' ";
 	
 	$objDb = new db();
 	$link = $objDb->conecta_mysql();
@@ -18,7 +21,9 @@
 		$dados_usuario= mysqli_fetch_array($resultado_id); 	
 
 		if(isset($dados_usuario['email'])){//	echo 'Usuário existe';
-				
+			//	$_SESSION['alerta'] = false;
+				$_SESSION['first'] = $dados_usuario['first'];
+				$_SESSION['id_user'] = $dados_usuario['id'];
 				$_SESSION['email'] = $dados_usuario['email'];
 				$_SESSION['senha'] = $dados_usuario['senha'];
                 header('Location: ../Usuario/area_user.php');
@@ -31,6 +36,7 @@
 
 	}
 	else {
-			echo('Erro. Tente novamente');
+			//echo('Erro. Tente novamente');
+			header('Location: ../login.php?erro=1');
 		}
 ?>

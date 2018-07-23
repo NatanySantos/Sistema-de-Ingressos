@@ -1,7 +1,7 @@
 <?php
 
   session_start();
-
+ // $_SESSION['alerta']=false;
   if(!isset($_SESSION['email'])){
     header('Location: ../index.php');
   }
@@ -22,23 +22,23 @@
     <title>Ingressos Jhama - Vender</title>
 
     <!--=== Bootstrap CSS ===-->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <!--=== Slicknav CSS ===-->
-    <link href="assets/css/plugins/slicknav.min.css" rel="stylesheet">
+    <link href="../assets/css/plugins/slicknav.min.css" rel="stylesheet">
     <!--=== Magnific Popup CSS ===-->
-    <link href="assets/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="../assets/css/plugins/magnific-popup.css" rel="stylesheet">
     <!--=== Owl Carousel CSS ===-->
-    <link href="assets/css/plugins/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/css/plugins/owl.carousel.min.css" rel="stylesheet">
     <!--=== Gijgo CSS ===-->
-    <link href="assets/css/plugins/gijgo.css" rel="stylesheet">
+    <link href="../assets/css/plugins/gijgo.css" rel="stylesheet">
     <!--=== FontAwesome CSS ===-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
     <!--=== Theme Reset CSS ===-->
-    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="../assets/css/reset.css" rel="stylesheet">
     <!--=== Main Style CSS ===-->
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
     <!--=== Responsive CSS ===-->
-    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="../assets/css/responsive.css" rel="stylesheet">
 
 
     <!--[if lt IE 9]>
@@ -53,7 +53,7 @@
     <div class="preloader">
         <div class="preloader-spinner">
             <div class="loader-content">
-                <img src="assets/img/ingressos.gif" alt="JSOFT">
+                <img src="../assets/img/ingressos.gif" alt="JSOFT">
             </div>
         </div>
     </div>
@@ -99,8 +99,8 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="index.html" class="logo">
-                            <img src="assets/img/logo.png" alt="JSOFT">
+                        <a href="index.php" class="logo">
+                            <img src="../assets/img/logo.png" alt="JSOFT">
                         </a>
                     </div>
                     <!--== Logo End ==-->
@@ -109,8 +109,8 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li><a href="../index.html">Home</a></li>
-                                <li><a href="../about.html">Sobre</a></li>
+                                <li><a href="../index.php">Home</a></li>
+                                <li><a href="../about.php">Sobre</a></li>
                                 
                                 <li><a href="area_user.php">Ingressos</a>
                                     <ul>
@@ -119,8 +119,8 @@
                                     </ul>
                                 </li>
                                 <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
-                                <li><a href="../contact.html">Contato</a></li>
-                                <li class="active"><a href="#">Perfil</a>
+                                <li><a href="../contact.php">Contato</a></li>
+                                <li><a href="area_user.php">Perfil</a>
                                     <ul>
                                         <li><a href="publicacao.php">Minhas Publicações</a></li>
                                         <li><a href="comprar.php">Lista de Ingressos</a></li>
@@ -161,12 +161,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+
+                  
+                      <div class="alert alert-success" id ="alerta" role="alert">
+                        Publicação realizada com sucesso!!!!
+                        </div>
+                      
+
                     <div class="team-content">
+
                         <div class="row">
+
                             <!-- Team Tab Menu start -->
                             <!-- <div class="col-lg-8"> -->
                                 <div class="team-member-info text-center">
-                                    <form  action="BD/venda.php"  id="myForm" method="POST" enctype="multipart/form-data">
+                                    <form  action="../BD/venda.php"  id="myForm" method="POST" enctype="multipart/form-data">
 
                                         <div class="row">  
                                             <div class="col-md-2"></div> <!-- fim col 2 -->
@@ -193,7 +202,7 @@
                                                     <div class="col-md-6" style="padding-right: 0px;">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1">*Preço R$ </span>
-                                                            <input type="number" class="form-control" id="preco"  name="preco" >
+                                                            <input type="number" class="form-control" id="preco"  name="preco" name="price" min="0" step="0.01"placeholder="Exemplo: 150.99">
                                                         </div>
                                                     </div>
                                                 </div><!-- fim col 12 --> <br><br><br>
@@ -202,7 +211,7 @@
                                                     <div class="col-md-6" style="padding-left: 0px; ">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1">*Telefone</span>
-                                                            <input type="number" class="form-control" id="telefone"  name="telefone">
+                                                            <input type="numeric" class="form-control" id="telefone"  name="telefone" >
                                                         </div>
                                                     </div>
                             
@@ -210,7 +219,7 @@
                                                     <div class="col-md-6" style="padding-right: 0px;">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1">*Email </span>
-                                                            <input type="email" class="form-control" id="email"  name="email" >
+                                                            <input type="email" class="form-control" id="email"  name="email" placeholder="Informe o email que você usa para logar neste sistema">
                                                         </div>
                                                     </div>
                                                 </div><!-- fim col 12 --> <br><br><br>
@@ -315,7 +324,6 @@
         <i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i>
     </div>
     <!--== Scroll Top Area End ==-->
-
     <!--=======================Javascript============================-->
     <!--=== Jquery Min Js ===-->
     <script src="../assets/js/jquery-3.2.1.min.js"></script>
@@ -346,13 +354,19 @@
 
     <!--=== Mian Js ===-->
     <script src="../assets/js/main.js"></script>
-
+    <script src="../assets/js/jquerymask.min.js"></script>
+      <script src="../assets/js/sweetalert.js"></script>
 
     <!--=== Mian Js ===-->
-    <script src="assets/js/main.js">
+    <script type="text/javascript">
+
         $(document).ready(function() { 
-            jQuery('#telefone').mask("(99)9999-9999");
-         });
+            jQuery('#telefone').mask("(99)9 9999-9999");
+
+             $("#alerta").hide();
+         });    
+
+      
 
         $(document).ready(function(e) { 
  
@@ -367,17 +381,21 @@
                  var email= $("#email").val();
                    
 
-                  if ( !nome || !data || !preco || !telefone || !email){
+                  if ( !evento || !data || !preco || !telefone || !email){
                     return swal("Error ", "Todos os campos devem ser preenchidos !!", "error");
                   }
                   else{
                     document.getElementById('myForm').submit();
-                    alert('PUBLICAÇAO REALIZADA COM SUCESSO!!');
+        
+
+                     $("#alerta").show();
                   }
              
             });      
         });
     </script>
+
+  
 
 </body>
 
