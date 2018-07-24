@@ -10,9 +10,6 @@
  	$email = $_POST["email"];
  	$senha = $_POST["senha"];
 
- 	//preciso verificar se o email ja existe no banco
- 	//if($email == )
-
  	$senha = sha1($senha.$email);
 
  	$sql = "SELECT email FROM usuarios Where email = '$email'";

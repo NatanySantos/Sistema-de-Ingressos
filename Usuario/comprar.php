@@ -72,26 +72,7 @@
                     </div>
                     <!--== Single HeaderTop End ==-->
 
-                    <!--== Social Icons Start ==-->
-                    <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <!-- <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a> -->
-                            <<!-- a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a> -->
-                        </div>
-                    </div>
 
-                    <!--== Social Icons Start ==-->
-                    <!-- <div class="col-lg-3 text-right">
-                        <div class="header-social-icons">
-                            <a href="#"><i class="fa fa-behance"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div> -->
-                    <!--== Social Icons End ==-->
                 </div>
             </div>
         </div>
@@ -115,16 +96,13 @@
                             <ul>
                                 <li><a href="../index.php">Home</a></li>
                                 <li><a href="../about.html">Sobre</a></li>
-                                
+                                <li><a href="../contact.html">Contato</a></li>
                                 <li><a href="area_user.php">Ingressos</a>
                                     <ul>
                                         <li class="active"><a href="#">Comprar</a></li>
                                         <li><a href="vender.php">Vender</a></li>
                                     </ul>
                                 </li>
-                                <<li ><a href="login.php">Sair</a></li>
-                                <!-- <li><a href="register.php">Registrar</a></li> -->
-                                <li><a href="../contact.html">Contato</a></li>
                                 <li class="active"><a href="#">Perfil</a>
                                     <ul>
                                         <li><a href="publicacao.php">Minhas Publicações</a></li>
@@ -132,6 +110,7 @@
                                         <li><a href="perfil.php">Editar Perfil</a></li>
                                     </ul>
                                 </li>
+                                <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                             </ul>
                         </nav>
                     </div>

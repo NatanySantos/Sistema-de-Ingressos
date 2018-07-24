@@ -6,7 +6,7 @@
  //   header('Location: Usuario/area_user.php');
   }
 
-$status = isset($_GET['status']) ? $_GET['status'] : 0;   
+$alerta = isset($_GET['alerta']) ? $_GET['alerta'] : 0;   
 
 ?>
 <!DOCTYPE html>
@@ -87,15 +87,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : 0;
             </div>
         </div>
         <!--== Header Top End ==-->
-<?php 
 
-    if($status == 1){
-        echo "Sucesso";
-    }else if($status ==2){
-        echo "erro";
-    }
-
-?>
 
 
         <!--== Header Bottom Start ==-->
@@ -143,15 +135,26 @@ $status = isset($_GET['status']) ? $_GET['status'] : 0;
                                     <ul>
                                         <li><a href="index.php">Home</a></li>
                                         <li><a href="about.php">Sobre</a></li>
-                                        
+                                        <li class="active"><a href="contact.php">Contato</a></li>
                                         <li><a href="Usuario/area_user.php">Ingressos</a>
                                             <ul>
                                                 <li><a href="Usuario/comprar.php">Comprar</a></li>
                                                 <li><a href="Usuario/vender.php">Vender</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="Usuario/logout.php">Sair</a></li>
-                                        <li class="active"><a href="contact.php">Contato</a></li>
+                                        <li><a href="Usuario/area_user.php">Perfil</a>
+                                            <ul>
+                                                <li><a href="Usuario/publicacao.php">Minhas Publicações</a></li>
+                                                <li><a href="Usuario/comprar.php">Lista de Ingressos</a></li>
+                                                <li><a href="Usuario/perfil.php">Editar Perfil</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa fa-user"> <?php echo $_SESSION['first']; ?> </i>
+                                            </a>
+                                        </li>
+                                        <li><a href="Usuario/logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -187,6 +190,28 @@ $status = isset($_GET['status']) ? $_GET['status'] : 0;
     </section>
     <!--== Page Title Area End ==-->
 
+    <br><br>
+
+    <?php 
+
+    if($alerta == 1){
+?>
+    <div class="alert alert-success" id ="alerta" role="alert" style="text-align: center; margin: 50px;">
+        Mensagem enviada com sucesso!!!!
+    </div>
+<?php
+     }else if($alerta ==2){
+?>
+    <div class="alert alert-danger" id ="alerta" role="alert">
+        Nao foi possível enviar sua menssagem... Tente novamente mais tarde!
+    </div>
+<?php
+    }
+
+?>
+
+<br><br>
+
     <!--== Contact Page Area Start ==-->
     <div class="contact-page-wrao section-padding">
         <div class="container">
@@ -197,20 +222,20 @@ $status = isset($_GET['status']) ? $_GET['status'] : 0;
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="name-input">
-                                        <input type="text" placeholder="Nome completo">
+                                        <input type="text" placeholder="Nome completo" id="nome" name="nome">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-md-6">
                                     <div class="email-input">
-                                        <input type="email" placeholder="Email">
+                                        <input type="email" placeholder="Email" id="email" name="email">
                                     </div>
                                 </div>
                             </div>
 
 
                             <div class="message-input">
-                                <textarea name="review" cols="30" rows="10" placeholder="Message"></textarea>
+                                <textarea name="review" cols="30" rows="10" placeholder="Mensagem" id="review"></textarea>
                             </div>
 
                             <div class="input-submit">

@@ -111,22 +111,27 @@
                             <ul>
                                 <li><a href="../index.php">Home</a></li>
                                 <li><a href="../about.php">Sobre</a></li>
-                                
+                                <li><a href="../contact.php">Contato</a></li>
                                 <li><a href="area_user.php">Ingressos</a>
                                     <ul>
                                         <li><a href="comprar.php">Comprar</a></li>
                                         <li class="active"><a href="#">Vender</a></li>
                                     </ul>
                                 </li>
-                                <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
-                                <li><a href="../contact.php">Contato</a></li>
                                 <li><a href="area_user.php">Perfil</a>
                                     <ul>
                                         <li><a href="publicacao.php">Minhas Publicações</a></li>
                                         <li><a href="comprar.php">Lista de Ingressos</a></li>
-                                        <li><a href="perfil.php">Editar Perfil</a></li>
+                                        <!-- <li><a href="perfil.php">Editar Perfil</a></li> -->
                                     </ul>
                                 </li>
+                                <li>
+                                    <a href="perfil.php">
+                                        <i class="fa fa-user"> <?php echo $_SESSION['first']; ?> </i>
+                                    </a>
+                                    <ul>  <li><a href="perfil.php">Editar Perfil</a></li>  </ul>
+                                </li>
+                                <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
                             </ul>
                         </nav>
                     </div>
@@ -177,6 +182,8 @@
                                 <div class="team-member-info text-center">
                                     <form  action="../BD/venda.php"  id="myForm" method="POST" enctype="multipart/form-data">
 
+                                        <input type="hidden" name="status"  id="status" value="disponivel">
+
                                         <div class="row">  
                                             <div class="col-md-2"></div> <!-- fim col 2 -->
 
@@ -211,7 +218,7 @@
                                                     <div class="col-md-6" style="padding-left: 0px; ">
                                                         <div class="input-group">
                                                             <span class="input-group-addon" id="basic-addon1">*Telefone</span>
-                                                            <input type="numeric" class="form-control" id="telefone"  name="telefone" >
+                                                            <input type="text" class="form-control" id="telefone"  name="telefone" >
                                                         </div>
                                                     </div>
                             
@@ -244,15 +251,6 @@
                                         </div> <!-- fim row -->
                                     </form>
                                 </div>
-                                
-                            <!-- </div> -->
-                            <!-- Team Tab Menu End -->
-
-                           
-
-                                    
-                                  
-
                         </div>
                     </div>
                 </div>

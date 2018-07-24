@@ -135,15 +135,28 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                                     <ul>
                                         <li class="active"><a href="index.php">Home</a></li>
                                         <li><a href="about.php">Sobre</a></li>
-                                        
+                                        <li><a href="contact.php">Contato</a></li>
                                         <li><a href="Usuario/area_user.php">Ingressos</a>
                                             <ul>
                                                 <li><a href="Usuario/comprar.php">Comprar</a></li>
                                                 <li><a href="Usuario/vender.php">Vender</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="Usuario/logout.php">Sair</a></li>
-                                        <li><a href="contact.php">Contato</a></li>
+    
+                                        <li><a href="Usuario/area_user.php">Perfil</a>
+                                            <ul>
+                                                <li><a href="Usuario/publicacao.php">Minhas Publicações</a></li>
+                                                <li><a href="Usuario/comprar.php">Lista de Ingressos</a></li>
+                                                <li><a href="Usuario/perfil.php">Editar Perfil</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa fa-user"> <?php echo $_SESSION['first']; ?> </i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="Usuario/logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -203,7 +216,6 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                             </p>
                             </div>
                             <div class="create-ac teste">
-                                <!-- <p>Don't have an account? <a href="register.html">Cadastrar</a></p> -->
                                 <p>Não tem uma conta? <a href="register.html">Cadastrar</a></p>
                             </div>
                         </div>
@@ -268,7 +280,6 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                 <div class="col-lg-6">
                     <div class="about-video" style=" text-align: right; top: 30%">
                         <img src="assets/img/vip.gif" alt="JSOFT">
-                        <!-- <iframe src="https://media.giphy.com/media/3h07ordClTzbO/giphy.gif"></iframe> -->
                     </div>
                 </div>
                 <!-- About Video End -->

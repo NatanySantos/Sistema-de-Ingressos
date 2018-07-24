@@ -1,13 +1,13 @@
 <?php
 
   session_start();
-
+ // $_SESSION['alerta']=false;
   if(!isset($_SESSION['email'])){
-    header('Location: ../login.php');
+    header('Location: ../index.php');
   }
 
 
-?> 
+?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -19,7 +19,7 @@
     <!--=== Favicon ===-->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-    <title>Ingressos Jhama</title>
+    <title>Ingressos Jhama - Editar Perfil</title>
 
     <!--=== Bootstrap CSS ===-->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
@@ -46,6 +46,7 @@
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body class="loader-active">
 
     <!--== Preloader Area Start ==-->
@@ -59,7 +60,7 @@
     <!--== Preloader Area End ==-->
 
     <!--== Header Area Start ==-->
-     <header id="header-area" class="fixed-top">
+      <header id="header-area" class="fixed-top">
         <!--== Header Top Start ==-->
         <div id="header-top" class="d-none d-xl-block">
             <div class="container">
@@ -82,6 +83,10 @@
                     </div>
                     <!--== Single HeaderTop End ==-->
 
+                </div>
+            </div>
+        </div>
+        <!--== Single HeaderTop End ==-->
 
                 </div>
             </div>
@@ -106,27 +111,27 @@
                             <ul>
                                 <li><a href="../index.php">Home</a></li>
                                 <li><a href="../about.php">Sobre</a></li>
-                                <li><a href="../contact.php">Contato</a></li>  
+                                <li><a href="../contact.php">Contato</a></li>
                                 <li><a href="area_user.php">Ingressos</a>
                                     <ul>
                                         <li><a href="comprar.php">Comprar</a></li>
-                                        <li><a href="vender.php">Vender</a></li>
+                                        <li ><a href="#">Vender</a></li>
                                     </ul>
                                 </li>
-
-                                <li class="active"><a href="area_user.php">Perfil</a>
+                                <li><a href="area_user.php">Perfil</a>
                                     <ul>
                                         <li><a href="publicacao.php">Minhas Publicações</a></li>
                                         <li><a href="comprar.php">Lista de Ingressos</a></li>
+                                        <!-- <li><a href="perfil.php">Editar Perfil</a></li> -->
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="perfil.php">
                                         <i class="fa fa-user"> <?php echo $_SESSION['first']; ?> </i>
                                     </a>
-                                    <ul> <li><a href="perfil.php">Editar Perfil</a></li>  </ul>
+                                    <ul>  <li class="active"><a href="perfil.php">Editar Perfil</a></li>  </ul>
                                 </li>
-                                <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                                <li ><a href="logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></a>
                             </ul>
                         </nav>
                     </div>
@@ -138,16 +143,16 @@
     </header>
     <!--== Header Area End ==-->
 
-        <!--== Page Title Area Start ==-->
+    <!--== Page Title Area Start ==-->
     <section id="page-title-area" class="section-padding overlay">
         <div class="container">
             <div class="row">
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Meu espaço</h2>
+                        <h2>Perfil</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Utilize nossa plataforma da maneira que desejar.</p>
+                        <p>Veja seus dados pessoais e edite se for necessário.</p>
                     </div>
                 </div>
                 <!-- Page Title End -->
@@ -157,38 +162,111 @@
     <!--== Page Title Area End ==-->
 
 
-    <!--== Service Page Content Start ==-->
-    <section id="service-page-wrapper" class="section-padding">
+
+    <br><br>
+
+    <?php
+ 
+        require_once('../BD/db.class.php');
+                        
+        //$id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+        $id = $_SESSION['id_user'];
+        $objDb = new db();
+        $link = $objDb->conecta_mysql();
+        $sql="SELECT * FROM usuarios where id = '$id';"; 
+        $resultado_id = mysqli_query($link, $sql);
+       
+        if($resultado_id){                 
+            $dados_usuario=array() ;
+            $quant_linha=0;
+
+            while($linha = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)){
+                $quant_linha++;
+                $dados_usuario[] = $linha;
+            }
+         
+        }
+    ?>
+  
+        
+
+
+
+
+    <!--== Perfil Start ==-->
+    <section id="help-desk-page-wrap" class="section-padding">
         <div class="container">
             <div class="row">
-                <!-- Single Service Start -->
-                <a href="comprar.php" >
-                    <div class="col-lg-6 text-center">
-                        <div class="service-item">
-                            <i class="fa fa-ticket"></i>
-                            <h3>COMPRAR</h3>
-                            <p>Clique aqui se desejar fazer uma compra</p>
-                        </div>
+                <div class="col-lg-12">
+
+                  
+                    <div class="alert alert-success" id ="alerta" role="alert">
+                        Publicação realizada com sucesso!!!!
                     </div>
-                </a>
-                <!-- Single Service End -->
-                
-                <!-- Single Service Start -->
-                <a href="vender.php">
-                    <div class="col-lg-6 text-center">
-                        <div class="service-item">
-                            <i class="fa fa-money"></i>
-                            <h3>VENDER</h3>
-                            <p>Clique aqui se desejar fazer uma venda</p>
-                        </div>
+                      
+
+                    <div class="team-content">
+
+                 
+
+                            <!-- Team Tab Menu start -->
+                            <!-- <div class="col-lg-8"> -->
+                                <div class="team-member-info text-center">
+                                    <form  action="../BD/edit_user.php"  id="form_user" method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="id" value="<?php echo  $dados_usuario[0]['id']; ?>">
+                                        <div class="row">
+                                            <div class="col-md-6"><div class="input-group">
+                                                <span class="input-group-addon" id="basic-addon1">Primeiro nome</span>
+                                                <input type="text" class="form-control" id="first"  name="first" value="<?php echo  $dados_usuario[0]['first']; ?>">
+                                            </div></div>
+                                            <div class="col-md-6"><div class="input-group">
+                                                <span class="input-group-addon" id="basic-addon1">Ultimo nome</span>
+                                                <input type="text" class="form-control" id="last"  name="last" value="<?php echo  $dados_usuario[0]['last']; ?>">
+                                            </div></div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                 <div class="input-group">
+                                                            <span class="input-group-addon" id="basic-addon1">Email</span>
+                                                            <input type="email" class="form-control" id="email"  name="email" value="<?php echo  $dados_usuario[0]['email']; ?>">
+                                                 </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                 <div class="input-group">
+                                                            <span class="input-group-addon" id="basic-addon1">Senha</span>
+                                                            <input type="password" class="form-control" id="senha"  name="senha" value="<?php echo  $dados_usuario[0]['senha']; ?>">
+                                                 </div>
+                                             </div>
+                                        </div>
+                                        <br>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <!-- <a href="javascript:window.history.go(-1)"> -->
+                                                    <a href="area_user.php">
+                                                    <button type="button" class="btn btn-danger btn-page" id="Voltar"> 
+                                                      <span class="fa fa-ban" aria-hidden="true"></span> Cancelar
+                                                  </button>
+                                              </a>
+                                              
+                                              <button type="submit" class="btn btn-success" id="salvar"> <span class="fa fa-save" aria-hidden="true"> Salvar </span> </button>
+                                          </div>
+                                       </div>
+
+
+                                    </form>
+                                </div>
+                   
                     </div>
-                </a>
-                <!-- Single Service End -->
+                </div>
             </div>
         </div>
     </section>
-    <!--== Service Page Content End ==-->
-
+    <!--== Perfil End ==-->
+              
+           
+      
     <!--== Footer Area Start ==-->
     <section id="footer-area">
         <!-- Footer Widget Start -->
@@ -245,17 +323,13 @@
         </div>
         <!-- Footer Bottom End -->
     </section>
-    <!--== Footer Area End ==-->                       
-        
-    </section>
-    <!--== Suas Publicaçoes End ==-->
+    <!--== Footer Area End ==-->
 
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">
         <i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i>
     </div>
     <!--== Scroll Top Area End ==-->
-
     <!--=======================Javascript============================-->
     <!--=== Jquery Min Js ===-->
     <script src="../assets/js/jquery-3.2.1.min.js"></script>
@@ -286,7 +360,26 @@
 
     <!--=== Mian Js ===-->
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/jquerymask.min.js"></script>
+      <script src="../assets/js/sweetalert.js"></script>
 
-</body>
+   
 
-</html>
+   <script type="text/javascript">
+      
+
+      $(document).ready(function(e) { 
+     
+      
+        $('#salvar').click(function(e) {
+         e.preventDefault();
+         
+            document.getElementById('form_user').submit();
+            alert('FUNCIONÁRIO ATUALIZADO COM SUCESSO!!');
+         
+         
+         });      
+      });
+
+ 
+    </script>

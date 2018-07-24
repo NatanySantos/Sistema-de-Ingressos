@@ -23,9 +23,9 @@
 
   if (isset($_POST['texto']))
   $texto = $_POST['texto']; else $texto='';
-
- 
-
+  // $nome = $_POST['nome'];
+  // $email = $_POST['email'];
+  // $texto = $_POST['texto'];
 
   $sql = " INSERT INTO mensagem (nome, email, texto) values ('$nome', '$email','$texto');";
 
@@ -34,11 +34,11 @@
 
   if($resultado){
 
-  header('Location: ../contact.php?status=1');
+  header('Location: ../contact.php?alerta=1');
       
     }
  else {
-  header('Location: ../contact.php?status=2');
+  header('Location: ../contact.php?alerta=2');
       
     
   }

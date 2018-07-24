@@ -21,7 +21,7 @@
 	$email = $_POST["email"];
 	$info = $_POST["info"];
 	$user = 	$_SESSION['id_user'];
-	$status = 'disponivel';
+	$status = $_POST["status"];
 
 
 	$sql = "insert into venda  (evento, data, preco, telefone, email, info, id_user, status) values ( '$evento','$data','$preco','$telefone', '$email', '$info' , '$user' ,'$status') ";

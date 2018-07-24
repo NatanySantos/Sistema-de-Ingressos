@@ -124,9 +124,9 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Login</h2>
+                        <h2>Registrar</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>Crie uma conta para ter acesso aos benefícios da plataforma.</p>
                     </div>
                 </div>
                 <!-- Page Title End -->

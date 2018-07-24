@@ -134,15 +134,26 @@ $erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
                                     <ul>
                                         <li><a href="index.php">Home</a></li>
                                         <li class="active"><a href="about.php">Sobre</a></li>
-                                        
+                                        <li><a href="contact.php">Contato</a></li>
                                         <li><a href="Usuario/area_user.php">Ingressos</a>
                                             <ul>
                                                 <li><a href="Usuario/comprar.php">Comprar</a></li>
                                                 <li><a href="Usuario/vender.php">Vender</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="Usuario/logout.php">Sair</a></li>
-                                        <li><a href="contact.php">Contato</a></li>
+                                        <li><a href="Usuario/area_user.php">Perfil</a>
+                                            <ul>
+                                                <li><a href="Usuario/publicacao.php">Minhas Publicações</a></li>
+                                                <li><a href="Usuario/comprar.php">Lista de Ingressos</a></li>
+                                                <li><a href="Usuario/perfil.php">Editar Perfil</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa fa-user"> <?php echo $_SESSION['first']; ?> </i>
+                                            </a>
+                                        </li>
+                                        <li><a href="Usuario/logout.php">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></li>
                                     </ul>
                                 </nav>
                             </div>
